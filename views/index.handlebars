@@ -1,0 +1,38 @@
+<h1>Tasks</h1>
+
+<h2>Tasks In Progress</h2>
+
+<ul>
+  {{#each tasks}}
+    {{#unless completed}}
+      {{> tasks/task-block completed=true}}
+    {{/unless}}
+  {{/each}}
+</ul>
+
+<h2>Tasks Completed</h2>
+
+<ul>
+  {{#each tasks}}
+    {{#if completed}}
+      {{> tasks/task-block completed=false}}
+    {{/if}}
+  {{/each}}
+</ul>
+
+<h2>Add a New Task</h2>
+<form class="create-form">
+
+  <div class="form-group">
+    <label for="ca">Task Name:</label>
+    <input type="text" id="ta" name="name">
+  </div>
+
+  <div class="form-group">
+    <label for="sleepy">Completed?</label><br>
+    <input type="radio" name="completed" value="1" checked> Completed!<br>
+    <input type="radio" name="completed" value="0"> Awake
+  </div>
+
+  <button type="submit">Add Task</button>
+</form>
