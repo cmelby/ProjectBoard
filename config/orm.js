@@ -58,36 +58,36 @@ var orm = {
         });
     },
     update: function(table, objColVal, condition, cb) {
-        var queryString ="UPDATE " + table;
+        var queryString = "UPDATE " + table;
 
         queryString += " SET ";
         queryString += objToSql(objColVal);
         queryString += " WHERE ";
         queryString += condition;
-
-        console.log(querString);
-        connection.query(queryString, function(err, res) {
-            if (err) {
-                throw err;
-            }
-            cb(res);
+    
+        console.log(queryString);
+        connection.query(queryString, function(err, result) {
+          if (err) {
+            throw err;
+          }
+    
+          cb(result);
         });
-    },
-    delete: function (table, condition, cd) {
-        var queryString = " DELETE FROM " + table;
+      },
+      delete: function(table, condition, cb) {
+        var queryString = "DELETE FROM " + table;
         queryString += " WHERE ";
         queryString += condition;
-
-        connection.query(queryString, function(err, res) {
-            if (err) {
-                throw err;
-            }
-            cd(res);
+    
+        connection.query(queryString, function(err, result) {
+          if (err) {
+            throw err;
+          }
+    
+          cb(result);
         });
-    }
-
-};
-
-
-//Export orm to model project.js
-module.exports = orm;
+      }
+    };
+    
+    // Export the orm to be used in our model..
+    module.exports = orm;

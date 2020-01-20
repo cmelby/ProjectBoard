@@ -45,7 +45,7 @@ router.put("/api/tasks/:id", function(req, res) {
 
 
 router.delete("/api/tasks/:id", function(req, res) {
-    var condition = "id " + req.params.id;
+    var condition = "id = " + req.params.id;
 
     project.delete(condition, function(result) {
         if (result.affectedRows == 0) {
