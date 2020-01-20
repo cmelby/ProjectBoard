@@ -10,7 +10,7 @@ var project = require("../models/project.js");
 router.get("/", function(req, res) {
     project.selectAll(function(data) {
         var hbsObject = {
-            tasks: Data
+            tasks: data
         };
         console.log(hbsObject);
         res.render("index", hbsObject);

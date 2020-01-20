@@ -39,12 +39,12 @@ var orm = {
         });
     },
     insertOne: function(table, col, val, cb) {
-        var queryString = "INERT INTO " + table;
+        var queryString = "INSERT INTO " + table;
 
         queryString += " (";
         queryString += col.toString();
         queryString += ") ";
-        queryString += "VALUEs (";
+        queryString += "VALUES (";
         queryString += printQuestionMarks(val.length);
         queryString += ") ";
 

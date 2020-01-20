@@ -7,8 +7,8 @@ var project = {
             cb(res);
         });
     },
-    insertOne: function(cols, val, cb) {
-        orm.insertOne("tasks", cols, val, cb, function(res) {
+    insertOne: function(col, val, cb) {
+        orm.insertOne("tasks", col, val, cb, function(res) {
             cb(res);
         });
     },
