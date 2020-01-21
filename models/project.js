@@ -27,4 +27,4 @@ delete: function(condition, cb) {
 };
 // Export the database functions to the project.js
 // to be used in our controller
-module.exports = project;
+module.exports = project;   

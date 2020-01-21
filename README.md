@@ -5,7 +5,7 @@ Workflow made simple.
 Project Board is browser based productivity application that allows a user to stay ontop of thier workflow. The user can open Project Board, add new tasks under in progress and reference these tasks throughout the day. Once a task has been complete, the user can click "compeleted" and the tile will transitioin to the Completed column. If they need to revise something they can can click "revise" and the tile will transisiton back to the In Progress column. When a tasks is finished the user can click "Delete" and the task tile will disapear. Project baord was built using Handlebars, MySQL, Express, and JavaScript. Its teh base of what will become a browser based Kanban baord. 
 
 ## Demo
-![Site]() 
+![Site](public/assets/img/demo.gif) 
 
  
 ## Technologies Used
