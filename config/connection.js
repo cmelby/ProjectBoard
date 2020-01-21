@@ -5,8 +5,7 @@ var mysql = require("mysql");
 var connection = mysql.createConnection({
     host: "nuskkyrsgmn5rw8c.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
     port: 3306,
-    user: "root",
-    username: "koke3zgfd51zpiyu",
+    user: "koke3zgfd51zpiyu",
     password: "ejupc8wfnbhk1hsr",
     database: "tlp3hnevda0gi8q6"
 });
@@ -17,5 +16,4 @@ connection.connect(function(err) {
     }
     console.log("connected as id " + connection.threadId);
 });
-
 module.exports = connection;
