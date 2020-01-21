@@ -1,12 +1,11 @@
-
+// Requer Depenecies........
 var express = require("express")
 var router = express.Router();
 
-// Import model functions
+// Import model functions.......
 var project = require("../models/project.js");
 
-
-// Routes
+// Get Route............
 router.get("/", function(req, res) {
     project.selectAll(function(data) {
         var hbsObject = {
@@ -16,7 +15,7 @@ router.get("/", function(req, res) {
         res.render("index", hbsObject);
     });
 });
-
+// POST Route.............
 router.post("/api/tasks", function(req, res) {
     project.insertOne([
         "task_name", "completed"
@@ -26,7 +25,7 @@ router.post("/api/tasks", function(req, res) {
         res.json({ id: results.insertId });
     });
 });
-
+// PUT Route...............
 router.put("/api/tasks/:id", function(req, res) {
     var condition = "id = " + req.params.id;
 
@@ -42,8 +41,7 @@ router.put("/api/tasks/:id", function(req, res) {
     }
   });
 });
-
-
+// Delete Route............
 router.delete("/api/tasks/:id", function(req, res) {
     var condition = "id = " + req.params.id;
 
@@ -55,6 +53,5 @@ router.delete("/api/tasks/:id", function(req, res) {
         }
     });
 });
-
 // Export router to server.js
 module.exports = router;

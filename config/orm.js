@@ -4,29 +4,26 @@ var connection = require("../config/connection.js");
 
 // Helper functions:
 function printQuestionMarks(num) {
-    var arr = [];
-
-    for (var i = 0; i < num; i++) {
-        arr.push("?");
-    }
-    return arr.toString();
+  var arr = [];
+  for (var i = 0; i < num; i++) {
+      arr.push("?");
+  }
+  return arr.toString();
 }
 
 function objToSql(ob) {
-    var arr = [];
-
-    for (var key in ob) {
-      var value = ob[key];
-        if(Object.hasOwnProperty.call(ob, key)) {
-            if (typeof value === "string" && value.indexOf(" ") >= 0) {
-                value = "'" + value + "'";
-            }
-            arr.push(key + "=" + value);
-        }
-    }
-    return arr.toString();
+  var arr = [];
+  for (var key in ob) {
+    var value = ob[key];
+      if(Object.hasOwnProperty.call(ob, key)) {
+          if (typeof value === "string" && value.indexOf(" ") >= 0) {
+              value = "'" + value + "'";
+          }
+          arr.push(key + "=" + value);
+      }
+  }
+  return arr.toString();
 }
-
 //Creating object for sql statement functions.....
 var orm = {
 
@@ -38,7 +35,7 @@ var orm = {
             }
             cb(res);
         });
-    },
+    }, // Insert function that will insert user input into our database table....
     insertOne: function(table, col, val, cb) {
         var queryString = "INSERT INTO " + table;
 
@@ -50,14 +47,13 @@ var orm = {
         queryString += ") ";
 
         console.log(queryString)
-
         connection.query(queryString, val, function(err, res) {
             if (err) {
                 throw err;
             }
             cb(res);
         });
-    },
+    }, // Update funciton that will update existing tasks on our back end.....
     update: function(table, objColVal, condition, cb) {
         var queryString = "UPDATE " + table;
 
@@ -74,7 +70,7 @@ var orm = {
     
           cb(result);
         });
-      },
+      },// Delete funciont that will delete tasks from our database......
       delete: function(table, condition, cb) {
         var queryString = "DELETE FROM " + table;
         queryString += " WHERE ";
@@ -84,11 +80,9 @@ var orm = {
           if (err) {
             throw err;
           }
-    
           cb(result);
         });
       }
     };
-    
     // Export the orm to be used in our model..
     module.exports = orm;

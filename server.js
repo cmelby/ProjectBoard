@@ -21,7 +21,7 @@ var routes = require("./controllers/project_controllers.js");
 
 app.use(routes);
 
-// Start our server & listen for cleint requests...
+// Start our server & handle requests...
 app.listen(PORT, function() {
   // Log (server-side) when our server has started
   console.log("Server listening on: http://localhost:" + PORT);

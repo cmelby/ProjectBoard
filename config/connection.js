@@ -9,7 +9,6 @@ var connection = mysql.createConnection({
     password: "password",
     database: "project_db"
 });
-
 connection.connect(function(err) {
     if (err) {
         console.error("error connectnig: " + err.stack);

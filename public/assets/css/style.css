@@ -8,15 +8,9 @@ li {
     font-weight: bold;
   }
   
-  /* .create-update-form {
-    padding: 5px;
-    margin: 5px;
-    background: aqua;
-  }
-   */
-  /* .form-group {
-    margin-bottom: 5px;
-  } */
+.jumbotron {
+  margin-top: 8%;
+}
 
 .hide { 
   display: none;
