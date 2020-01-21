@@ -2,26 +2,26 @@
 var orm = require("../config/orm.js");
 
 var project = {
-    selectAll: function(cb) {
-        orm.selectAll("tasks", function(res) {
-            cb(res);
-        });
-    },
-    insertOne: function(col, val, cb) {
-        orm.insertOne("tasks", col, val, cb, function(res) {
-            cb(res);
-        });
-    },
-    update: function(objColVal, condition, cb) {
-        orm.update("tasks", objColVal, condition, function(res) {
-            cb(res);
-        });
-    },
-    delete: function(condition, cb) {
-        orm.delete("tasks", condition, function(res) {
-            cb(res);
-        });
-    }
+selectAll: function(cb) {
+    orm.selectAll("tasks", function(res) {
+        cb(res);
+    });
+},
+insertOne: function(col, val, cb) {
+    orm.insertOne("tasks", col, val, cb, function(res) {
+        cb(res);
+    });
+},
+update: function(objColVal, condition, cb) {
+    orm.update("tasks", objColVal, condition, function(res) {
+        cb(res);
+    });
+},
+delete: function(condition, cb) {
+    orm.delete("tasks", condition, function(res) {
+        cb(res);
+    });
+}
 };
 
 // Export the database functions to the project.js

@@ -1,38 +1,47 @@
-<h1>Tasks</h1>
-
-<h2>Tasks In Progress</h2>
-
-<ul>
-  {{#each tasks}}
-    {{#unless completed}}
-      {{> tasks/task-block completed=true}}
-    {{/unless}}
-  {{/each}}
-</ul>
-
-<h2>Tasks Completed</h2>
-
-<ul>
-  {{#each tasks}}
-    {{#if completed}}
-      {{> tasks/task-block completed=false}}
-    {{/if}}
-  {{/each}}
-</ul>
-
-<h2>Add a New Task</h2>
-<form class="create-form">
-
-  <div class="form-group">
-    <label for="ta">Task Name:</label>
-    <input type="text" id="ta" name="name">
+<nav class="navbar navbar-light bg-light">
+  <span class="navbar-brand mb-0 h1 text-center">Project Board</span>
+</nav>
+<div class="container">
+  <div class="clearfix">
+      <div id="inProgressTask" class="col-6 float-left">
+        <h2 class="text-center">Tasks In Progress</h2>
+          <ul>
+            {{#each tasks}}
+              {{#unless completed}}
+                {{> tasks/task-block completed=true}}
+              {{/unless}}
+            {{/each}}
+          </ul>
+      </div>
+    <div id="completedTask" class="col-6 text-right float-right">
+      <h2 class="text-center">Tasks Completed</h2>
+        <ul>
+          {{#each tasks}}
+            {{#if completed}}
+              {{> tasks/task-block completed=false}}
+            {{/if}}
+          {{/each}}
+        </ul>
+    </div>
   </div>
-
-  <div class="form-group">
-    <label for="completed">Completed?</label><br>
-    <input type="radio" name="completed" value="1" checked> In Progress<br>
-    <input type="radio" name="completed" value="0"> Cmpleted
+</div>
+<div class="container">
+  <div class="col">
+    <div class="addNewTask text-center  mt-5">
+      <h3>Add a New Task</h3>
+        <form class="create-form">
+          <div class="form-group">
+            <label for="ta"></label>
+            <input class="" type="text" id="ta" name="name">
+          </div>
+          <div class="form-group">
+            {{!-- <label for="completed">Completed?</label><br> --}}
+            {{!-- <input type="radio" name="completed" value="1" checked> In Progress<br> --}}
+            <input class="hide" type="radio" name="completed" value="0">
+          </div>
+          <button class="btn-info rounded shadow-sm" type="submit">Add Task</button>
+        </form>
+    </div>
   </div>
+</div>
 
-  <button type="submit">Add Task</button>
-</form>

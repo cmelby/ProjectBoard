@@ -1,5 +1,7 @@
+//Require dependancies......
 var mysql = require("mysql");
 
+//Instantiate connection....
 var connection = mysql.createConnection({
     host: "localhost",
     port: 3306,

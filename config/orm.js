@@ -1,7 +1,8 @@
+//Require connection.......
 var connection = require("../config/connection.js");
 
 
-//creating helper function:
+// Helper functions:
 function printQuestionMarks(num) {
     var arr = [];
 

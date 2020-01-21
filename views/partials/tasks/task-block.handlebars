@@ -1,9 +1,13 @@
-<li>
-	{{task_name}}
 
-	<button class="change-completed" data-id="{{id}}" data-newcompleted="{{completed}}">
-		{{#if completed}}In Progress{{else}}Completed{{/if}}
-	</button>
+<li class="card shadow-sm">
+    {{task_name}}
 
-	<button class="delete-task" data-id="{{this.id}}">DELETE</button>
+    <button class="change-completed btn-success rounded mx-auto" data-id="{{id}}" data-newcompleted="{{completed}}">
+        {{#if completed}}Completed
+    </button>
+        <button class="change-completed btn-info rounded mx-auto" data-id="{{id}}" data-newcompleted="{{completed}}">
+        {{else}}Revise{{/if}}
+    </button>
+
+    <button class="delete-task btn-danger rounded mx-auto mt-1" data-id="{{this.id}}">Delete</button>
 </li>
